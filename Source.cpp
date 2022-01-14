@@ -6,16 +6,16 @@ class human
 public:
 	string name;
 	string lastname;
-	human (string name, string lastname) // конструктор
+	human (string name, string lastname) // РїРІР°РїРІР°РїРїР°РІ
 	{
 		this-> name = name;
 		this->lastname = lastname;
 	}
-	human(const human& other){ // конструтор копирования
+	human(const human& other){ // ГЄГ®Г­Г±ГІГ°ГіГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
 		this->name = other.name;
 		this->lastname = other.lastname;
 	}
-	human& operator = (const human& rhs) { // оператор присваивания
+	human& operator = (const human& rhs) { // Г®ГЇГҐГ°Г ГІГ®Г° ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї
 		this->name = rhs.name;
 		this->lastname = rhs.lastname;
 
@@ -25,25 +25,25 @@ public:
 class doctor : public human
 {
 private:
-	string medical_specialties; // специальность
-	string hospital; // место работы
+	string medical_specialties; // Г±ГЇГҐГ¶ГЁГ Г«ГјГ­Г®Г±ГІГј
+	string hospital; // Г¬ГҐГ±ГІГ® Г°Г ГЎГ®ГІГ»
 public:
-	string workmanship; // квалификация 
+	string workmanship; // ГЄГўГ Г«ГЁГґГЁГЄГ Г¶ГЁГї 
 	
-	int countOfCurePatient; // кол-во вылеченных пациентов
-	doctor(string name, string lastname, string medical_specialties,string hospital) :human(name, lastname) { // конструктор
+	int countOfCurePatient; // ГЄГ®Г«-ГўГ® ГўГ»Г«ГҐГ·ГҐГ­Г­Г»Гµ ГЇГ Г¶ГЁГҐГ­ГІГ®Гў
+	doctor(string name, string lastname, string medical_specialties,string hospital) :human(name, lastname) { // ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
 		this->name = name;
 		this->lastname = lastname;
 		this->medical_specialties = medical_specialties;
 		this->workmanship = workmanship;
 	}
-	doctor(const doctor& other):human(name,lastname) { // конструтор копирования
+	doctor(const doctor& other):human(name,lastname) { // ГЄГ®Г­Г±ГІГ°ГіГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
 		this->name = other.name;
 		this->lastname = other.lastname;
 		this->medical_specialties = other.medical_specialties;
 		this->workmanship = workmanship;
 	}
-	doctor& operator = (const doctor& rhs) { // оператор присваивания
+	doctor& operator = (const doctor& rhs) { // Г®ГЇГҐГ°Г ГІГ®Г° ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї
 		this->name = rhs.name;
 		this->lastname = rhs.lastname;
 		this->medical_specialties = rhs.medical_specialties;
@@ -60,27 +60,27 @@ public:
 		countOfCurePatient = count;
 	}
 	template <typename T>
-	void setWorkmanship(T _workmanship) { // шаблон для повышения квалификации или наоборот понижения
+	void setWorkmanship(T _workmanship) { // ГёГ ГЎГ«Г®Г­ Г¤Г«Гї ГЇГ®ГўГ»ГёГҐГ­ГЁГї ГЄГўГ Г«ГЁГґГЁГЄГ Г¶ГЁГЁ ГЁГ«ГЁ Г­Г Г®ГЎГ®Г°Г®ГІ ГЇГ®Г­ГЁГ¦ГҐГ­ГЁГї
 		workmanship = _workmanship;
 	}
 };
 class patient : public human
 {
 private:
-	string hospital; // поликлиника по месту жительства
+	string hospital; // ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ  ГЇГ® Г¬ГҐГ±ГІГі Г¦ГЁГІГҐГ«ГјГ±ГІГўГ 
 public:
-	string choiceDoctor; // выбор специалиста, к какому именно врачу хочет попасть пациент
-	patient(string name, string lastname, string choiceDoctor, string hospital) :human(name, lastname) { // конструктор
+	string choiceDoctor; // ГўГ»ГЎГ®Г° Г±ГЇГҐГ¶ГЁГ Г«ГЁГ±ГІГ , ГЄ ГЄГ ГЄГ®Г¬Гі ГЁГ¬ГҐГ­Г­Г® ГўГ°Г Г·Гі ГµГ®Г·ГҐГІ ГЇГ®ГЇГ Г±ГІГј ГЇГ Г¶ГЁГҐГ­ГІ
+	patient(string name, string lastname, string choiceDoctor, string hospital) :human(name, lastname) { // ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
 		this->choiceDoctor = choiceDoctor;
 		this->name = name;
 		this->lastname = lastname;
 	}
-	patient(const patient& other) :human(name, lastname) { // конструтор копирования
+	patient(const patient& other) :human(name, lastname) { // ГЄГ®Г­Г±ГІГ°ГіГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
 		this->choiceDoctor = other.choiceDoctor;
 		this->name = other.name;
 		this->lastname = other.lastname;
 	}
-	patient& operator = (const patient& rhs) { // оператор присваивания
+	patient& operator = (const patient& rhs) { // Г®ГЇГҐГ°Г ГІГ®Г° ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї
 		this->name = rhs.name;
 		this->lastname = rhs.lastname;
 		this->choiceDoctor = rhs.choiceDoctor;
@@ -101,31 +101,31 @@ public:
 
 int main() {
 	setlocale(LC_ALL, "rus");
-	doctor doctor_1("Данил","Данилов","Окулист","2-ая поликлиника");
-	doctor doctor_2("Николай", "Николаев", "Терапевт", "1-ая поликлиника");
+	doctor doctor_1("Г„Г Г­ГЁГ«","Г„Г Г­ГЁГ«Г®Гў","ГЋГЄГіГ«ГЁГ±ГІ","2-Г Гї ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ");
+	doctor doctor_2("ГЌГЁГЄГ®Г«Г Г©", "ГЌГЁГЄГ®Г«Г ГҐГў", "Г’ГҐГ°Г ГЇГҐГўГІ", "1-Г Гї ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ");
 
 
 
-	patient patient_1("Иван", "Иванов", "Окулист","2-ая поликлиника");
-	patient patient_2("Кирилл", "Иванов", "Окулист", "2-ая поликлиника");
-	patient patient_3("Евгений", "Волков", "Терапевт", "1-ая поликлиника");
-	patient patient_4("Максим", "Кравцов", "Окулист", "2-ая поликлиника");
-	patient patient_5("Михаил", "Михайлов", "Терапевт", "2-ая поликлиника");
-	patient patient_6("Артём", "Борисов", "Окулист", "1-ая поликлиника");
+	patient patient_1("Г€ГўГ Г­", "Г€ГўГ Г­Г®Гў", "ГЋГЄГіГ«ГЁГ±ГІ","2-Г Гї ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ");
+	patient patient_2("ГЉГЁГ°ГЁГ«Г«", "Г€ГўГ Г­Г®Гў", "ГЋГЄГіГ«ГЁГ±ГІ", "2-Г Гї ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ");
+	patient patient_3("Г…ГўГЈГҐГ­ГЁГ©", "Г‚Г®Г«ГЄГ®Гў", "Г’ГҐГ°Г ГЇГҐГўГІ", "1-Г Гї ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ");
+	patient patient_4("ГЊГ ГЄГ±ГЁГ¬", "ГЉГ°Г ГўГ¶Г®Гў", "ГЋГЄГіГ«ГЁГ±ГІ", "2-Г Гї ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ");
+	patient patient_5("ГЊГЁГµГ ГЁГ«", "ГЊГЁГµГ Г©Г«Г®Гў", "Г’ГҐГ°Г ГЇГҐГўГІ", "2-Г Гї ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ");
+	patient patient_6("ГЂГ°ГІВёГ¬", "ГЃГ®Г°ГЁГ±Г®Гў", "ГЋГЄГіГ«ГЁГ±ГІ", "1-Г Гї ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ");
 
 	if ((doctor_1.getHospital() == patient_1.getHospital())&&(patient_1.getchoiceDoctor() == doctor_1.getMedical_specialties())) {
-		cout << patient_1.name << " " << patient_1.lastname << " - " << "Здоров"<<endl;
+		cout << patient_1.name << " " << patient_1.lastname << " - " << "Г‡Г¤Г®Г°Г®Гў"<<endl;
 		doctor_1.countOfCurePatient++;
 	}
 	else {
-		cout << "Не тот врач или не та поликлиника";
+		cout << "ГЌГҐ ГІГ®ГІ ГўГ°Г Г· ГЁГ«ГЁ Г­ГҐ ГІГ  ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ";
 	}
 	if ((doctor_2.getHospital() == patient_2.getHospital()) && (patient_2.getchoiceDoctor() == doctor_2.getMedical_specialties())) {
-		cout << patient_2.name << " " << patient_2.lastname << " - " << "Здоров"<<endl;
+		cout << patient_2.name << " " << patient_2.lastname << " - " << "Г‡Г¤Г®Г°Г®Гў"<<endl;
 		doctor_2.countOfCurePatient++;
 	}
 	else {
-		cout << "Не тот врач или не та поликлиника";
+		cout << "ГЌГҐ ГІГ®ГІ ГўГ°Г Г· ГЁГ«ГЁ Г­ГҐ ГІГ  ГЇГ®Г«ГЁГЄГ«ГЁГ­ГЁГЄГ ";
 	}
 	return 0;
 }
