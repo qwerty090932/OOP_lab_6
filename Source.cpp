@@ -32,7 +32,7 @@ private:
 public:
 	string workmanship; // квалификация
 	
-	int countOfCurePatient; // кол-во вылеченных студентов
+	int countOfCurePatient; // кол-во вылеченных пациентов
 	doctor(string name, string lastname, string medical_specialties,string hospital) :human(name, lastname) { // конструктор
 		this->name = name;
 		this->lastname = lastname;
